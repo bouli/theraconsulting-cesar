@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgres"
+  url      = "postgresql://postgres:postgres@localhost:6500/theraconsultingcesar?schema=public"
+}
+
+model EconomicCalendar {
+  date         DateTime
+  description  String
+  actual_state Float
+  close        Float
+  forecast     Float
+
+  @@unique([date, description])
+}
+
+model InvestingIndex {
+  date        DateTime
+  type        String
+  description String
+  close       Float
+  open        Float
+  high        Float
+  low         Float
+  volume      BigInt
+
+  @@unique([date, type, description])
+}
