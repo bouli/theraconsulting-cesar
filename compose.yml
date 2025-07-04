@@ -11,5 +11,15 @@ services:
       - 6500:5432
     volumes:
       - db:/data/postgres
+  seed:
+    container_name: seed
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: seed/Dockerfile
+    volumes:
+      - .:/seed
+    command:  /bin/sh -c "chmod +x seed/seed.sh && seed/seed.sh"
 volumes:
   db:
