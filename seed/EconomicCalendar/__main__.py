@@ -31,4 +31,5 @@ for news in root.iter('news'):
 
     df = pd.concat([df, df_append], ignore_index=True)
 df.to_csv(os.path.dirname(__file__) + '/data.csv', index=False)
-print(True)
+
+print(os.path.dirname(__file__).split('/')[-1] + " data loaded successfully!")

@@ -26,4 +26,5 @@ for file in files:
     df_final = pd.concat([df_final, df], ignore_index=True)
 
 df_final.to_csv(os.path.dirname(__file__) + '/data.csv', index=False)
-print(df_final)
+
+print(os.path.dirname(__file__).split('/')[-1] + " data loaded successfully!")
