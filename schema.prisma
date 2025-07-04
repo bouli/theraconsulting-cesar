@@ -6,9 +6,9 @@ datasource db {
 model EconomicCalendar {
   date         DateTime
   description  String
-  actual_state Float
-  close        Float
-  forecast     Float
+  actual_state Float?
+  close        Float?
+  forecast     Float?
 
   @@unique([date, description])
 }
@@ -17,11 +17,11 @@ model InvestingIndex {
   date        DateTime
   type        String
   description String
-  close       Float
-  open        Float
-  high        Float
-  low         Float
-  volume      BigInt
+  close       Float?
+  open        Float?
+  high        Float?
+  low         Float?
+  volume      BigInt?
 
   @@unique([date, type, description])
 }
